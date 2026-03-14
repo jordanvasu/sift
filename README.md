@@ -9,10 +9,10 @@ Search your clipboard history by meaning, not keywords. Works with text, code, U
 ## Features
 
 - Semantic search across all clipboard history using natural language
-- Image search via CLIP embeddings — find screenshots by describing what's in them
+- Image search via CLIP embeddings -> find screenshots by describing what's in them
 - OCR on copied images so text content is searchable too
 - Cross-platform: macOS, Windows, Linux
-- Fully local — no data leaves your machine
+- Fully local: No data leaves your machine
 
 ## Installation
 
