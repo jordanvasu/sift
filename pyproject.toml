@@ -1,1 +1,49 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
 
+[project]
+name = "sift-clip"
+version = "0.1.0"
+description = "Local-first semantic clipboard manager with text and image search"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [{ name = "Jordan Vasu" }]
+
+dependencies = [
+    "chromadb>=0.5.0",
+    "sentence-transformers>=3.0.0",
+    "open-clip-torch>=2.24.0",
+    "Pillow>=10.0.0",
+    "pytesseract>=0.3.10",
+    "pyperclip>=1.9.0",
+    "fastapi>=0.111.0",
+    "uvicorn>=0.30.0",
+    "pystray>=0.19.5",
+    "keyboard>=0.13.5",
+    "platformdirs>=4.2.0",
+    "rich>=13.0.0",
+]
+
+[project.optional-dependencies]
+macos = ["pyobjc-framework-Cocoa>=10.0"]
+windows = ["pywin32>=306"]
+linux = ["python-xlib>=0.33"]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23", "black>=24.0", "ruff>=0.4.0"]
+
+[project.scripts]
+sift = "sift.cli:main"
+siftd = "sift.daemon:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sift*"]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
